@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Dewi Bootstrap Template</title>
+  <title>ArulIndia.com</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/apple-touch-icon.jpg" rel="Arul-India-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -28,13 +28,7 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Dewi
-  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
 
 <body class="index-page">
@@ -291,6 +285,23 @@
                   <h3>Solar Off-Grid System</h3> 
                 </a> 
                 <p>For energy independence in remote areas or where grid access is unreliable, we offer robust Off-Grid Solar Systems, featuring durable components and reliable battery storage for continuous power.</p> 
+              </div> 
+            </div> 
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400"> 
+            <div class="service-item"> 
+              <div class="img"> 
+                <img src="assets/img/panel_clearner_nozzel.png" class="img-fluid" alt=""> 
+              </div> 
+              <div class="details position-relative"> 
+                <div class="icon"> 
+                  <i class="bi bi-easel"></i> 
+                </div> 
+                <a href="service-details.html" class="stretched-link"> 
+                  <h3>Solar Panel Cleaner</h3> 
+                </a> 
+                <p>Simplify your solar panel maintenance with our user-friendly Solar Panel Cleaner Nozzles. Designed for easy attachment and effective cleaning, our nozzles make keeping your panels spotless accessible to everyone, ensuring peak energy production.</p>
               </div> 
             </div> 
           </div><!-- End Service Item -->
@@ -1150,6 +1161,44 @@
     <i class="bi bi-whatsapp"></i>
   </a>
 
+<!-- Add this script -->
+<script>
+  // Function to update clean energy generation
+  function updateCleanEnergyGeneration() {
+    // Get current date
+    const today = new Date();
+    
+    // Base initial clean energy generation
+    const baseGeneration = 13734;
+    
+    // Daily increment rate (adjustable)
+    const dailyIncrementPerMWh = 15;
+    
+    // Calculate days since a reference date (e.g., company founding or first measurement)
+    const referenceDate = new Date('2023-01-01'); // Adjust this to the actual reference date
+    const daysSinceReference = Math.floor((today - referenceDate) / (1000 * 60 * 60 * 24));
+    
+    // Calculate new total generation
+    const newTotalGeneration = baseGeneration + (daysSinceReference * dailyIncrementPerMWh);
+    
+    // Update the purecounter element
+    const energyElement = document.querySelector('.purecounter');
+    if (energyElement) {
+      energyElement.setAttribute('data-purecounter-end', Math.round(newTotalGeneration));
+      
+      // Reinitialize PureCounter if available
+      if (window.PureCounter) {
+        new PureCounter();
+      }
+    }
+  }
+
+  // Run the update function when the page loads
+  document.addEventListener('DOMContentLoaded', updateCleanEnergyGeneration);
+</script>
+</body>
+<!-- Add this just before the closing </body> tag -->
+<script src="path/to/dynamic-energy-generation-script.js"></script>
 </body>
 
 </html>
